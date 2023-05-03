@@ -1,7 +1,7 @@
 // import firebase from "firebase";
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs } from 'firebase/firestore/lite'
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 
 
@@ -23,6 +23,30 @@ export const createAuthUserWithEmailAndPassword = async (email, password) => {
 
   return await createUserWithEmailAndPassword(auth, email, password);
 };
+
+export const signInAuthUserWithEmailAndPassword = async (email, password) => {
+  if (!email || !password) return;
+
+  return await signInWithEmailAndPassword(auth, email, password);
+};
+
+// export const onAuthStateChangedListener = (callback) => {
+//   return onAuthStateChanged(auth, callback);
+// };
+
+// export const getCurrentUser = () => {
+//   return new Promise((resolve, reject) => {
+//     const unsubscribe = onAuthStateChanged(
+//       auth,
+//       (userAuth) => {
+//         unsubscribe();
+//         resolve(userAuth);
+//       },
+//       reject
+//     );
+//   });
+// };
+
 
 export { auth };
 export default db;

@@ -2,7 +2,10 @@ import React, { useRef } from "react";
 import { auth } from "../firebase";
 import "./SignupScreen.css";
 
-import { createAuthUserWithEmailAndPassword} from '../firebase'
+import {
+  createAuthUserWithEmailAndPassword,
+  signInAuthUserWithEmailAndPassword,
+} from "../firebase";
 
 function SignupScreen() {
   const emailRef = useRef(null);
@@ -11,11 +14,11 @@ function SignupScreen() {
   const register = (e) => {
     e.preventDefault();
     createAuthUserWithEmailAndPassword(
-        emailRef.current.value,
-        passwordRef.current.value
-      )
-      .then((userAuth) => {
-        console.log(userAuth);
+      emailRef.current.value,
+      passwordRef.current.value
+    )
+      .then((authUser) => {
+        console.log(authUser);
       })
       .catch((error) => {
         alert(error.message);
@@ -24,6 +27,14 @@ function SignupScreen() {
 
   const signIn = (e) => {
     e.preventDefault();
+    signInAuthUserWithEmailAndPassword(
+      emailRef.current.value,
+      passwordRef. current.value
+    ).then((authUser) => {
+      console.log(authUser)
+    }).catch(error => {
+      alert(error.message)
+    })
   };
 
   return (
