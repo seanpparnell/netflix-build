@@ -29,18 +29,11 @@
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  /* align-items: center;
-  align-content: center; */
+  left: 0;
+  right: 0;
   z-index: 1;
   color: #fff;
   padding: 20px;
-}
-
-.loginScreen__logo {
-  position: fixed;
-  left: 0;
-  width: 150px;
-  padding-left: 20px;
 }
 
 .loginScreen__gradient {
@@ -53,25 +46,50 @@
     rgba(0, 0, 0, 0.8) 0,
     rgba(0, 0, 0, 0) 60%,
     rgba(0, 0, 0, 0.8) 100%
-  );
-}
-
-.loginScreen__button {
-  position: fixed;
-  right: 20px;
-  top: 20px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  color: #fff;
-  background-color: #e50914;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-}
+    );
+  }
+  
+  .loginScreen__button {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #e50914;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .loginScreen__logo {
+    position: fixed;
+    left: 0;
+    width: 150px;
+    padding-left: 20px;
+    object-fit: contain;
+  }
 
 .loginScreen__input > form > input {
   padding: 10px;
   outline-width: 0;
   height: 30px;
   width: 30%;
+  border: none;
+  max-width: 600px;
+}
+
+.loginScreen__input {
+  margin: 20px;
+}
+
+.loginScreen__getStarted {
+  
+  padding: 16px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #e50914;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
 }
